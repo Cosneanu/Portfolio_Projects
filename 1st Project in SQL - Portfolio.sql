@@ -102,7 +102,7 @@ Looking at :
 		- optional| filtration by date
 */
 
-Select SUM(new_cases) as total_cases, SUM(cast(new_deaths as int)) as total_deaths, round(SUM(cast(new_deaths as int))/SUM(New_Cases)*100,2) as DeathPercentage
+Select SUM(new_cases) as total_cases, SUM(cast(new_deaths as int)) as total_deaths, ROUND(SUM(cast(new_deaths as int))/SUM(New_Cases)*100,2) as DeathPercentage
 From PortfolioProject..CovidDeaths
 where continent is not null 
 --Group By date
@@ -138,13 +138,11 @@ as
 (
 Select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations
 , SUM(CONVERT(int,vac.new_vaccinations)) OVER (Partition by dea.Location Order by dea.location, dea.Date) as RollingPeopleVaccinated
---, (RollingPeopleVaccinated/population)*100
 From PortfolioProject..CovidDeaths dea
 Join PortfolioProject..CovidVaccinations vac
 	On dea.location = vac.location
 	and dea.date = vac.date
 where dea.continent is not null 
---order by 2,3
 )
 Select *, (RollingPeopleVaccinated/Population)*100
 From PopvsVac
@@ -173,7 +171,6 @@ RollingPeopleVaccinated numeric
 insert into #PErcentPopulationVaccinated
 Select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, 
  SUM(convert(int,vac.new_vaccinations)) OVER (Partition by dea.Location Order by dea.location, dea.Date) as RollingPeopleVaccinated 
- --(RollingPeopleVaccinated/population)*100
 From PortfolioProject..CovidDeaths dea
 Join PortfolioProject..CovidVaccinations vac
 	On dea.location = vac.location
@@ -192,7 +189,6 @@ From #PErcentPopulationVaccinated
 Create View PercentPopulationVaccinated as
 Select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations
 , SUM(CONVERT(int,vac.new_vaccinations)) OVER (Partition by dea.Location Order by dea.location, dea.Date) as RollingPeopleVaccinated
---, (RollingPeopleVaccinated/population)*100
 From PortfolioProject..CovidDeaths dea
 Join PortfolioProject..CovidVaccinations vac
 	On dea.location = vac.location
