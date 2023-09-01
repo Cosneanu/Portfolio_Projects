@@ -1,8 +1,8 @@
 
 /*
 1st SQL project 
-Name | Covid 19 Data Exploration 
-
+Name | Covid-19 Data Exploration 
+Link for Data | https://ourworldindata.org/covid-deaths
 */
 
 
