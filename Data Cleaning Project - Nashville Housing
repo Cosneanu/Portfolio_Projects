@@ -1,16 +1,28 @@
 /*
 
-Cleaning Data in SQL Queries
+2nd SQL project 
+Cleaning Data in SQL Queries 
+Link for Data | 
 
 RECAP OF THE DATA CLEANING FROM THIS PROJECT :
+	1. Standardize the date format of the `SaleDate` column to yyyy-mm-dd. This is done by using the `CONVERT()` function to convert the date format from any valid format to yyyy-mm-dd.
+	2. Removes rows where the `PropertyAddress` column is null. This is done by joining the table to itself and then updating the `PropertyAddress` column with the value from the other row if the two rows have the same `ParcelID` but different `PropertyAddress` values.
+	3. Splits the `PropertyAddress` column into two columns: `PropertySplitAddress` and `PropertySplitCity`. This is done by using the `SUBSTRING()` function to extract the address and city from the `PropertyAddress` column.
+	4. Splits the `OwnerAddress` column into three columns: `OwnerSplitAddress`, `OwnerSplitCity`, and `OwnerSplitState`.  This is done by using the `PARSENAME()` function to parse the `OwnerAddress` column into its three components: the street address, city, and state.
+	5. Changes the values in the `SoldAsVacant` column from `Y` and `N` to `Yes` and `No`.  This is done by using the `CASE` statement to change the values based on their corresponding conditions.
+	6. Remove duplicate rows from the table.  This is done by using the `ROW_NUMBER()` function to assign a unique row number to each row and then deleting rows where the row number is greater than 1.
+	7. Deletes the `OwnerAddress`, `TaxDistrict`, and `PropertyAddress` columns.  These columns are no longer needed since the data has been split into separate columns.
 
-1. Standardizes the date format of the `SaleDate` column to yyyy-mm-dd. This is done by using the `CONVERT()` function to convert the date format from any valid format to yyyy-mm-dd.
-2. Removes rows where the `PropertyAddress` column is null. This is done by joining the table to itself and then updating the `PropertyAddress` column with the value from the other row if the two rows have the same `ParcelID` but different `PropertyAddress` values.
-3. Splits the `PropertyAddress` column into two columns: `PropertySplitAddress` and `PropertySplitCity`. This is done by using the `SUBSTRING()` function to extract the address and city from the `PropertyAddress` column.
-4. Splits the `OwnerAddress` column into three columns: `OwnerSplitAddress`, `OwnerSplitCity`, and `OwnerSplitState`.  This is done by using the `PARSENAME()` function to parse the `OwnerAddress` column into its three components: the street address, city, and state.
-5. Changes the values in the `SoldAsVacant` column from `Y` and `N` to `Yes` and `No`.  This is done by using the `CASE` statement to change the values based on their corresponding conditions.
-6. Removes duplicate rows from the table.  This is done by using the `ROW_NUMBER()` function to assign a unique row number to each row and then deleting rows where the row number is greater than 1.
-7. Deletes the `OwnerAddress`, `TaxDistrict`, and `PropertyAddress` columns.  These columns are no longer needed since the data has been split into separate columns.
+Some of the CHALLENGES I faced in this project:
+	-Dealing with inconsistent data formats
+	-Treating the missing data as a separate category.
+	-Identifying and removing outliers
+	-Deleting the rows with missing data
+	-Understanding the context of the data.
+
+
+Overall, this project provided valuable learning experiences. I gained knowledge in data cleaning and preparation for analysis, as well as handling challenges like missing and inconsistent data. 
+This knowledge will prove beneficial in my future data analysis projects.
 
 */
 
