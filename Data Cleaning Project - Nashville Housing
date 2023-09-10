@@ -21,8 +21,12 @@ Some of the CHALLENGES I faced in this project:
 	-Understanding the context of the data.
 
 
-Overall, this project provided valuable learning experiences. I gained knowledge in data cleaning and preparation for analysis, as well as handling challenges like missing and inconsistent data. 
+ Overall, this project provided valuable learning experiences. I gained knowledge in data cleaning and preparation for analysis, as well as handling challenges like missing and inconsistent data. 
 This knowledge will prove beneficial in my future data analysis projects.
+ As I have cleaned the data for further analysis it is easier right now to examine sales per year and month and observe some patterns and trends.
+Further useful information that we can extract could be the average price of properties per City. 
+By using a scatter plot it ould be explored the relationship  between Building Value and the Sale price.
+
 
 */
 
