@@ -21,11 +21,15 @@ Some of the CHALLENGES I faced in this project:
 	-Understanding the context of the data.
 
 
+FURTHER RESEARCH:
+	-Now that the data has been cleaned for further analysis, it is simpler to look at sales by year and month and spot any patterns and trends.
+	-The average price of homes in each city could be another important piece of data that we might gather. 
+	-It should be investigated how Building Value and Sale Price relate using a scatter plot.
+
+
  Overall, this project provided valuable learning experiences. I gained knowledge in data cleaning and preparation for analysis, as well as handling challenges like missing and inconsistent data. 
 This knowledge will prove beneficial in my future data analysis projects.
- As I have cleaned the data for further analysis it is easier right now to examine sales per year and month and observe some patterns and trends.
-Further useful information that we can extract could be the average price of properties per City. 
-By using a scatter plot it ould be explored the relationship  between Building Value and the Sale price.
+
 
 
 */
