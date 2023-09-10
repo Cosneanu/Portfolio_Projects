@@ -2,7 +2,7 @@
 
 2nd SQL project 
 Cleaning Data in SQL Queries 
-Link for Data | 
+Link for Data | https://www.kaggle.com/datasets/tmthyjames/nashville-housing-data
 
 RECAP OF THE DATA CLEANING FROM THIS PROJECT :
 	1. Standardize the date format of the `SaleDate` column to yyyy-mm-dd. This is done by using the `CONVERT()` function to convert the date format from any valid format to yyyy-mm-dd.
