@@ -1,8 +1,26 @@
 
 /*
 1st SQL project 
-Name | Covid-19 Data Exploration 
 Link for Data | https://ourworldindata.org/covid-deaths
+
+
+Insights of what I have done in the project:
+	- The COVID-19 data from Our World in Data website was explored using SQL queries.
+	- The number of cases, deaths, and vaccinations in different countries and continents were looked at.
+	- The percentage of the population that has been infected or vaccinated was calculated.
+	- Views and tables were created to store the data for further analysis.
+
+Some of the CHALLENGES I faced in this project:
+
+	- The data was large and complex, so it was challenging to write queries that could efficiently extract the insights you were looking for.
+	- Some of the data was missing or incomplete, which made it difficult to get accurate results.
+	- There were different ways to interpret the data, so it was important to carefully consider the different perspectives before drawing conclusions.
+
+Here are some of the conclusions drawn from this project:
+
+	-The COVID-19 pandemic has had a devastating impact on the world, with millions of cases and deaths.
+	-The virus has spread rapidly and unevenly, with some countries being more affected than others.
+	-There is a statistical statement that a greater vaccination ratio of the population reduces the number of death cases.
 */
 
 
@@ -21,7 +39,7 @@ from PortfolioProject..CovidVaccinations
 order by 3,4
 
 
--- Selecting specific data that I'm interetesed in  
+-- Selecting specific data that I'm interested in  
 
 Select location, date, total_cases, new_cases, total_deaths, population
 from	PortfolioProject..CovidDeaths
@@ -32,7 +50,7 @@ order by 1,2
 Looking at :
 	-Total Cases, 
 	-Total Deaths + 
-	-likelyhood of dying after geting infected
+	-likelihood of dying after getting infected
 */
 
 Select location, date, total_cases, total_deaths, round((total_deaths/total_cases)*100,2) as Percentage
@@ -112,7 +130,7 @@ order by 1,2
 
 /*
 Looking at :
-	- Population that has recieved Covid Vacination ordered by Location and Date
+	- Population that has received Covid Vaccination ordered by Location and Date
 */
  
 Select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, 
@@ -184,7 +202,7 @@ From #PErcentPopulationVaccinated
 
 
 
--- Creating View to store data for later visualizations
+-- Creating a View to store data for later visualizations
 
 Create View PercentPopulationVaccinated as
 Select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations
